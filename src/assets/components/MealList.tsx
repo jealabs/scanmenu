@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { FilterCategory } from "../../types";
 import MealResults from "./MealResults";
+import CategorySelect from "./CategorySelect";
 
 export default function MealList() {
   const [category, setCategory] = useState<string>("Seafood");
@@ -51,16 +52,10 @@ export default function MealList() {
     <>
       <section>
         <h1>Meal List</h1>
-        <select
-          value={category}
-          onChange={handleCategoryChange}
-          name="category"
-        >
-          <option value="Seafood">Seafood</option>
-          <option value="Beef">Beef</option>
-          <option value="Chicken">Chicken</option>
-          <option value="Pasta">Pasta</option>
-        </select>
+        <CategorySelect
+          category={category}
+          handleCategoryChange={handleCategoryChange}
+        />
       </section>
 
       <section>

@@ -17,4 +17,14 @@ export type MealResultsProps = {
 
 export type MealCardProps = {
   meal: FilterCategory;
-}
+};
+
+export type ErrorMessageProps = {
+  error: string;
+  retryError: () => void;
+};
+
+export type CategorySelectProps = {
+  category: string;
+  handleCategoryChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+};

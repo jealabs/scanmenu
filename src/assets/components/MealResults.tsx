@@ -1,19 +1,20 @@
 import type { MealResultsProps } from "../../types";
+import ErrorMessage from "./ErrorMessage";
 import MealCard from "./MealCard";
 
-export default function MealResult({ meals, loading, error, retryError }: MealResultsProps) {
+export default function MealResults({
+  meals,
+  loading,
+  error,
+  retryError,
+}: MealResultsProps) {
   return (
     <section>
       {loading && <p>Loading...</p>}
       {error ? (
-        <div>
-          <p>{error}</p>
-          <button onClick={retryError}>Retry</button>
-        </div>
+        <ErrorMessage error={error} retryError={retryError} />
       ) : (
-        meals.map((meal) => (
-          <MealCard key={meal.idMeal} meal={meal} />
-        ))
+        meals.map((meal) => <MealCard key={meal.idMeal} meal={meal} />)
       )}
     </section>
   );
