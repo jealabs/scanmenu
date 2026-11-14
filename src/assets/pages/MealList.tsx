@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { FilterCategory } from "../../types";
-import MealResults from "./MealResults";
-import CategorySelect from "./CategorySelect";
+import MealResults from "../components/MealResults";
+import CategorySelect from "../components/CategorySelect";
 
 export default function MealList() {
   const [category, setCategory] = useState<string>("Seafood");
@@ -57,7 +57,7 @@ export default function MealList() {
           handleCategoryChange={handleCategoryChange}
         />
       </section>
-
+      
       <section>
         <MealResults
           meals={meals}

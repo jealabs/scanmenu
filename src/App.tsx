@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Category } from "./types";
-import MealList from "./assets/components/MealList";
+import MealList from "./assets/pages/MealList";
 
 function App() {
   const [categories, setCategories] = useState<Category[]>([]);
