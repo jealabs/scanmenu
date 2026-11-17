@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import type { FilterCategory } from "../../types";
 import MealResults from "../components/MealResults";
 import CategorySelect from "../components/CategorySelect";
+import { useSearchParams } from "react-router-dom";
 
 export default function MealList() {
-  const [category, setCategory] = useState<string>("Seafood");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const category = searchParams.get("c") || "Seafood";
+
   const [meals, setMeals] = useState<FilterCategory[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCategory(e.target.value);
+    setSearchParams({ c: e.target.value });
   };
 
   const retryError = () => {
@@ -57,7 +60,7 @@ export default function MealList() {
           handleCategoryChange={handleCategoryChange}
         />
       </section>
-      
+
       <section>
         <MealResults
           meals={meals}
