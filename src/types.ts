@@ -28,3 +28,13 @@ export type CategorySelectProps = {
   category: string;
   handleCategoryChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
+
+export type MealDetailData = {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+};
+
+export type IdParams = {
+  id: string;
+};

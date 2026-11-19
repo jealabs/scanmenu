@@ -18,7 +18,7 @@
 ## Delayed
 - Race condition (pattern ignore + cleanup)
 - Provision from TheMealDB
-- Validation about message "Result not found" after hardcode at URLs
+- Validation about message "Result not found" after hardcode in URLs
 
 ## Features decision
 - 
